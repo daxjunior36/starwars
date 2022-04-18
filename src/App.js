@@ -5,7 +5,7 @@ import AppContext from './context/App.Context';
 
 function App() {
 
-  const [ ] = userState([]);
+  const [] = userState([]);
 
   const contexto = {
 
