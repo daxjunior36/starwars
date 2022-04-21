@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import AppContext from './AppContext';
 import fetchApiPlanetas from '../api/currencyAPI';
 
@@ -20,7 +21,8 @@ function AppProvider({ children }) {
     </AppContext.Provider>
   );
 }
-// App.propTypes = {
-// children: PropTypes.func,
+AppProvider.propTypes = {
+  children: PropTypes.objectOf.isRequired,
+};
 
 export default AppProvider;

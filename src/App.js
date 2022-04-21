@@ -4,7 +4,6 @@ import Table from './components/Table';
 import AppProvider from './context/AppProvider';
 
 function App() {
-
   return (
     <AppProvider>
       <Table />
