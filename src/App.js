@@ -1,20 +1,14 @@
 import React from 'react';
 import './App.css';
-import { userState } from 'react';
-import AppContext from './context/App.Context';
+import Table from './components/Table';
+import AppProvider from './context/AppProvider';
 
 function App() {
 
-  const [] = userState([]);
-
-  const contexto = {
-
-  }
-
   return (
-    <AppContext.Provider value={contexto}>
-      <span>Hello, App!</span>
-    </AppContext.Provider>
+    <AppProvider>
+      <Table />
+    </AppProvider>
   );
 }
 
