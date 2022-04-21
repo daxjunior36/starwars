@@ -4,9 +4,12 @@ import AppContext from '../context/AppContext';
 export default function Table() {
   const contexto = useContext(AppContext);
   console.log(contexto.data.results);
+
   return (
+
     <div>
       OLÁ MUNDO
+
       <table>
         <thead>
           <tr>
@@ -27,25 +30,26 @@ export default function Table() {
         </thead>
         <tbody>
           {contexto.data.results !== undefined
-          && contexto.data.results.map((element) => (
-            <tr key={ element.name }>
-              <td>{element.name}</td>
-              <td>{element.rotation_period}</td>
-              <td>{element.orbital_period}</td>
-              <td>{element.diameter}</td>
-              <td>{element.climate}</td>
-              <td>{element.gravity}</td>
-              <td>{element.terrain}</td>
-              <td>{element.surface_water}</td>
-              <td>{element.population}</td>
-              <td>{element.films}</td>
-              <td>{element.created}</td>
-              <td>{element.edited}</td>
-              <td>{element.url}</td>
+          && contexto.data.results.filter((element) => element.name
+            .includes(contexto.inputFiltro))
+            .map((element) => (
+              <tr key={ element.name }>
+                <td>{element.name}</td>
+                <td>{element.rotation_period}</td>
+                <td>{element.orbital_period}</td>
+                <td>{element.diameter}</td>
+                <td>{element.climate}</td>
+                <td>{element.gravity}</td>
+                <td>{element.terrain}</td>
+                <td>{element.surface_water}</td>
+                <td>{element.population}</td>
+                <td>{element.films}</td>
+                <td>{element.created}</td>
+                <td>{element.edited}</td>
+                <td>{element.url}</td>
 
-            </tr>
-          )) }
-          ;
+              </tr>
+            )) }
         </tbody>
       </table>
     </div>

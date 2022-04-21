@@ -5,6 +5,13 @@ import fetchApiPlanetas from '../api/currencyAPI';
 
 function AppProvider({ children }) {
   const [guardaLista, setGuardaLista] = useState([]);
+  const [inputFiltro, setInputFiltro] = useState('');
+  // const [filterByName, setFilterByName] = useState({ name: 'Tatoo' });
+
+  const onInputChange = ({ target }) => {
+    setInputFiltro(target.value);
+    // setFilterByName(...filterByName, { name: [target.value] });
+  };
 
   useEffect(() => {
     const funcListaPlanetas = async () => setGuardaLista(await fetchApiPlanetas());
@@ -13,6 +20,8 @@ function AppProvider({ children }) {
   console.log(guardaLista);
   const contexto = {
     data: guardaLista,
+    inputFiltro,
+    onInputChange,
   };
 
   return (
@@ -22,7 +31,7 @@ function AppProvider({ children }) {
   );
 }
 AppProvider.propTypes = {
-  children: PropTypes.objectOf.isRequired,
-};
+  children: PropTypes.any,
+}.isRequired;
 
 export default AppProvider;
