@@ -3,7 +3,6 @@ import AppContext from '../context/AppContext';
 
 export default function Table() {
   const contexto = useContext(AppContext);
-  console.log(contexto.data.results);
 
   return (
 
@@ -29,9 +28,9 @@ export default function Table() {
           </tr>
         </thead>
         <tbody>
-          {contexto.data.results !== undefined
-          && contexto.data.results.filter((element) => element.name
-            .includes(contexto.inputFiltro))
+          {contexto.data !== undefined
+          && contexto.data.filter((element) => element.name.toLowerCase()
+            .includes(contexto.inputFiltro.toLowerCase()))
             .map((element) => (
               <tr key={ element.name }>
                 <td>{element.name}</td>
