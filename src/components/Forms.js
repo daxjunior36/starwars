@@ -6,9 +6,8 @@ export default function Forms() {
   console.log(contexto.inputFiltro);
   return (
 
-    <div>
+    <div className="todos_imputes">
       <input
-        className=""
         type="text"
         name=""
         data-testid="name-filter"
@@ -17,19 +16,23 @@ export default function Forms() {
       />
 
       <select
+        className="todos_imputes"
         data-testid="column-filter"
         onChange={ contexto.onInputChangeColumn }
         value={ contexto.column }
       >
 
-        <option value="population">population</option>
-        <option value="orbital_period">orbital_period</option>
-        <option value="diameter">diameter</option>
-        <option value="rotation_period">rotation_period</option>
-        <option value="surface_water">surface_water</option>
+        {contexto.listaColumn.map((element) => (
+          <option
+            key={ element }
+            value={ element }
+          >
+            { element }
+          </option>))}
       </select>
 
       <select
+        className="todos_imputes"
         data-testid="comparison-filter"
         onChange={ contexto.onInputChangeComparison }
         value={ contexto.comparison }
@@ -44,7 +47,7 @@ export default function Forms() {
 
       <div>
         <input
-          className=""
+          className="todos_imputes"
           type="number"
           name=""
           data-testid="value-filter"
@@ -61,6 +64,21 @@ export default function Forms() {
           FILTRAR
         </button>
       </div>
+      <ul>
+        {contexto.filterByNumericValues.map((element) => (
+          <li key={ element.column }>
+            {`${element.column} ${element.comparison} ${element.value}`}
+            <button
+              type="button"
+            >
+              X
+            </button>
+          </li>
+        )) }
+      </ul>
     </div>
   );
 }
+// console.log(contexto.filterByNumericValues);
+// FAZER UM FILTRO QUE POSSIBILITE REMOVER O INTEM SELECIONADO DO SELECTD.
+// FAZER UMA FUNÇÃO PRA COLOCAR NO CLICK DO BOTÃO PARA EXCLUIR.

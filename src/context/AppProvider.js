@@ -10,11 +10,12 @@ function AppProvider({ children }) {
   const [comparison, setComparison] = useState('maior que');
   const [value, setValue] = useState('0');
   const [filterByNumericValues, setFilterByNumericValues] = useState([]);
-  // const [filterByName, setFilterByName] = useState({ name: 'Tatoo' });
+  const [listaColumn, setListaColumn] = useState(
+    ['population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water'],
+  );
 
   const onInputChange = ({ target }) => {
     setInputFiltro(target.value);
-    // setFilterByName(...filterByName, { name: [target.value] });
   };
 
   const onInputChangeColumn = ({ target }) => {
@@ -29,13 +30,21 @@ function AppProvider({ children }) {
     setValue(target.value);
   };
 
-  useEffect(() => {
-    console.log('guardaLista.results', guardaLista);
-  }, [guardaLista]);
+  const removeLista = () => {
+    console.log('ENTROU');
+    listaColumn.splice(listaColumn.indexOf(column), 1);
+    setColumn(listaColumn[0]);
+    console.log(listaColumn);
+  };
+
+  // useEffect(() => {
+  //   console.log('guardaLista.results', guardaLista);
+  // }, [guardaLista]);
 
   const onInputFilterByNumericValues = () => {
+    console.log('RECEBAAAAAAAAAAAA');
     setFilterByNumericValues([...filterByNumericValues, { column, comparison, value }]);
-    console.log(comparison);
+    removeLista();
     switch (comparison) {
     case 'maior que':
       return setGuardaLista(guardaLista
@@ -49,16 +58,12 @@ function AppProvider({ children }) {
     default:
       console.log('default');
     }
-
-    // switch(comparison) {
-    //   case 'maior que' : return tabela.filter((elementColumn) => elementColumn[column] > value));
-    //   }
   };
 
   useEffect(() => {
     fetchApiPlanetas().then((data) => setGuardaLista(data.results));
   }, []);
-  console.log(guardaLista);
+  // console.log(guardaLista);
   const contexto = {
     data: guardaLista,
     inputFiltro,
@@ -71,6 +76,8 @@ function AppProvider({ children }) {
     onInputChangeValue,
     filterByNumericValues,
     onInputFilterByNumericValues,
+    listaColumn,
+    setListaColumn,
   };
 
   return (
