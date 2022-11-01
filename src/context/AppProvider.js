@@ -31,7 +31,6 @@ function AppProvider({ children }) {
   };
 
   const removeLista = () => {
-    console.log('ENTROU');
     listaColumn.splice(listaColumn.indexOf(column), 1);
     setColumn(listaColumn[0]);
     console.log(listaColumn);
@@ -42,7 +41,6 @@ function AppProvider({ children }) {
   // }, [guardaLista]);
 
   const onInputFilterByNumericValues = () => {
-    console.log('RECEBAAAAAAAAAAAA');
     setFilterByNumericValues([...filterByNumericValues, { column, comparison, value }]);
     removeLista();
     switch (comparison) {

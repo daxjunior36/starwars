@@ -1,34 +1,31 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
+import '../style/Planet.css';
 
 export default function Table() {
   const contexto = useContext(AppContext);
 
   return (
-
-    <div>
-      OLÁ MUNDO
-
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Rotation Period</th>
-            <th>Orbital Period</th>
-            <th>Diameter</th>
-            <th>Climate</th>
-            <th>Gravity</th>
-            <th>terrain</th>
-            <th>Surface Water</th>
-            <th>Population</th>
-            <th>Films</th>
-            <th>Created</th>
-            <th>Edited</th>
-            <th>URL</th>
-          </tr>
-        </thead>
-        <tbody>
-          {contexto.data !== undefined
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Rotation Period</th>
+          <th>Orbital Period</th>
+          <th>Diameter</th>
+          <th>Climate</th>
+          <th>Gravity</th>
+          <th>terrain</th>
+          <th>Surface Water</th>
+          <th>Population</th>
+          <th>Films</th>
+          <th>Created</th>
+          <th>Edited</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        {contexto.data !== undefined
           && contexto.data.filter((element) => element.name.toLowerCase()
             .includes(contexto.inputFiltro.toLowerCase()))
             .map((element) => (
@@ -49,8 +46,8 @@ export default function Table() {
 
               </tr>
             )) }
-        </tbody>
-      </table>
-    </div>
+      </tbody>
+    </table>
+
   );
 }

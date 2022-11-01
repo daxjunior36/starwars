@@ -1,14 +1,18 @@
 import React from 'react';
-import Forms from './components/Forms';
-import Table from './components/Table';
+import { BrowserRouter } from 'react-router-dom';
 import AppProvider from './context/AppProvider';
+import AppRoutes from './Routes';
+import './App.css';
+// eslint-disable-next-line no-unused-vars
 
 function App() {
   return (
-    <AppProvider>
-      <Forms />
-      <Table />
-    </AppProvider>
+    <BrowserRouter>
+      <AppProvider>
+        <AppRoutes />
+
+      </AppProvider>
+    </BrowserRouter>
   );
 }
 

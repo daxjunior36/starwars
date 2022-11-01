@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
+import '../style/Planet.css';
 
 export default function Forms() {
   const contexto = useContext(AppContext);

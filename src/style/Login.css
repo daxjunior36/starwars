@@ -1,0 +1,37 @@
+/* stylelint-disable function-url-quotes */
+.container_login {
+  align-items: center;
+  background-image: url('../image/star-wars-full-hd.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100vh;
+  justify-content: center;
+  max-height: 100vw;
+  max-width: 100vw;
+}
+
+
+.button-sub {
+  background: #e0a931;
+  border: none;
+  border-color: 10px solid rgb(20, 19, 19);
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+  cursor: pointer;
+  font-family: Arial , Helvetica , sans-serif;
+  font-size: 14px;
+  margin: 10px;
+  margin-top: 1rem;
+  padding: 10px;
+  text-transform: uppercase;
+  transition: 0.1s;
+  width: 150px;
+ }
+
+ .video {
+
+
+ }
