@@ -1,4 +1,4 @@
-# Projeto STARWARS-PLANETS.
+# PROJETO STARWARS-PLANETS.
 
 O que foi exigido nesse projeto.
 
