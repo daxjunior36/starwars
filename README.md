@@ -4,13 +4,13 @@ Foi desenvolvido uma lista com filtros de planetas do universo de Star Wars usan
 
 Segue link deploy do meu projeto:(https://starwars-planets.netlify.app/)
 
-Habilidades útilizadas Nesse projeto:
+* Habilidades útilizadas Nesse projeto:
 
-Utilizar a Context API do React para gerenciar estado.
-Utilizar o React Hook useState;
-Utilizar o React Hook useContext;
-Utilizar o React Hook useEffect;
-Criar React Hooks customizados.
+* Utilizar a Context API do React para gerenciar estado.
+* Utilizar o React Hook useState;
+* Utilizar o React Hook useContext;
+* Utilizar o React Hook useEffect;
+* Criar React Hooks customizados.
 
 Instalando as dependências e inicialize o projeto
 
